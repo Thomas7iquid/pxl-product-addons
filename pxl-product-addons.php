@@ -48,6 +48,10 @@ class Pxl_Product_Addons {
         $this->loaded_text_domain();
         do_action( 'ppa_init' );
     }
+
+    public function loaded_text_domain(){
+        load_plugin_textdomain(PHB_TEXT_DOMAIN, false, dirname(plugin_basename(__FILE__)) . '/languages');
+    }
 }
 
 function pxl_pa(){

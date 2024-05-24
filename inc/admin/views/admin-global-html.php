@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wrap woocommerce">
 	<div class="icon32 icon32-posts-product" id="icon-woocommerce"><br/></div>
 
-    <h2><?php esc_html_e( 'Lafka Global Add-ons', 'lafka-plugin' ) ?> <a href="<?php echo add_query_arg( 'add', true, admin_url( 'edit.php?post_type=product&page=lafka_global_addons' ) ); ?>" class="add-new-h2"><?php esc_html_e( 'Add Global Add-on', 'lafka-plugin' ); ?></a></h2><br/>
+    <h2><?php esc_html_e( 'Lafka Global Add-ons', 'lafka-plugin' ) ?> <a href="<?php echo add_query_arg( 'add', true, admin_url( 'edit.php?post_type=product&page=pxl_global_addons' ) ); ?>" class="add-new-h2"><?php esc_html_e( 'Add Global Add-on', 'lafka-plugin' ); ?></a></h2><br/>
 
 	<table id="global-addons-table" class="wp-list-table widefat" cellspacing="0">
 		<thead>
@@ -43,7 +43,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 							?></td>
 							<td>
-								<a href="<?php echo add_query_arg( 'edit', $global_addon['id'], admin_url( 'edit.php?post_type=product&page=lafka_global_addons' ) ); ?>" class="button"><?php esc_html_e( 'Edit', 'lafka-plugin' ); ?></a> <a href="<?php echo wp_nonce_url( add_query_arg( 'delete', $global_addon['id'], admin_url( 'edit.php?post_type=product&page=lafka_global_addons' ) ), 'delete_addon' ); ?>" class="button"><?php esc_html_e( 'Delete', 'lafka-plugin' ); ?></a>
+								<a href="<?php echo add_query_arg( 'edit', $global_addon['id'], admin_url( 'edit.php?post_type=product&page=pxl_global_addons' ) ); ?>" class="button"><?php esc_html_e( 'Edit', 'lafka-plugin' ); ?></a> <a href="<?php echo wp_nonce_url( add_query_arg( 'delete', $global_addon['id'], admin_url( 'edit.php?post_type=product&page=pxl_global_addons' ) ), 'delete_addon' ); ?>" class="button"><?php esc_html_e( 'Delete', 'lafka-plugin' ); ?></a>
 							</td>
 						</tr>
 						<?php
@@ -51,7 +51,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				} else {
 					?>
 					<tr>
-						<td colspan="5"><?php esc_html_e( 'No global add-ons exists yet.', 'lafka-plugin' ); ?> <a href="<?php echo add_query_arg( 'add', true, admin_url( 'edit.php?post_type=product&page=lafka_global_addons' ) ); ?>"><?php esc_html_e( 'Add one?', 'lafka-plugin' ); ?></a></td>
+						<td colspan="5"><?php esc_html_e( 'No global add-ons exists yet.', 'lafka-plugin' ); ?> <a href="<?php echo add_query_arg( 'add', true, admin_url( 'edit.php?post_type=product&page=pxl_global_addons' ) ); ?>"><?php esc_html_e( 'Add one?', 'lafka-plugin' ); ?></a></td>
 					</tr>
 					<?php
 				}
