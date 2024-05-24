@@ -130,7 +130,7 @@ global $post;
 						<tbody>
 							<?php
 							foreach ( $addon['options'] as $option )
-								include( dirname( __FILE__ ) . '/html-addon-option.php' );
+								include( dirname( __FILE__ ) . '/addon-html-options.php' );
 							?>
 						</tbody>
 					</table>
