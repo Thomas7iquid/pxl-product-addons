@@ -9,7 +9,3 @@
  * Update URI:  https://7iquid.tech/
  * Text Domain: pxl-product-addons
  */
- 
-if (!defined('ABSPATH')) {
-    exit; // Exit if accessed directly.
-}
