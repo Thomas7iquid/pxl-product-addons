@@ -21,7 +21,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<tbody id="the-list">
 			<?php
 				$global_addons = Lafka_Product_Addon_Groups::get_all_global_groups();
-
 				if ( $global_addons ) {
 					foreach ( $global_addons as $global_addon ) {
 						?>
