@@ -27,7 +27,7 @@ class Class_PXL_Product_Addons {
 	}
 
 	protected function init_admin() {
-		include_once( dirname( __FILE__ ) . '/pxl-product-addon-admin.php' );
+		include_once( dirname( __FILE__ ) . '/admin/pxl-product-addon-admin.php' );
 		$GLOBALS['PXL_Product_Addon_Admin'] = new PXL_Product_Addon_Admin();
 	}
 
