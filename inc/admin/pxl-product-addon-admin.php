@@ -82,7 +82,7 @@ class PXL_Product_Addon_Admin {
 				echo '<div class="updated"><p>' . esc_html__( 'Add-on deleted successfully', 'lafka-plugin' ) . '</p></div>';
 			}
 
-			include( dirname( __FILE__ ) . '/view/admin-global-html.php' );
+			include( dirname( __FILE__ ) . '/views/admin-global-html.php' );
 		}
 	}
 
