@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			$loop = 0;
 
 			foreach ( $product_addons as $addon ) {
-				include( dirname( __FILE__ ) . '/html-addon.php' );
+				include( dirname( __FILE__ ) . '/addon-html.php' );
 
 				$loop++;
 			}
@@ -108,7 +108,7 @@ $empty_name_message = esc_html__( 'All addon fields require a name.', 'lafka-plu
 				$option = PXL_Product_Addon_Admin::get_new_addon_option();
 				$loop = "{loop}";
 
-				include( dirname( __FILE__ ) . '/html-addon-option.php' );
+				include( dirname( __FILE__ ) . '/addon-html-options.php' );
 
 				$html = ob_get_clean();
 				echo str_replace( array( "\n", "\r" ), '', str_replace( "'", '"', $html ) );
@@ -153,7 +153,7 @@ $empty_name_message = esc_html__( 'All addon fields require a name.', 'lafka-plu
 				);
 				$loop = "{loop}";
 
-				include( dirname( __FILE__ ) . '/html-addon.php' );
+				include( dirname( __FILE__ ) . '/addon-html.php' );
 
 				$html = ob_get_clean();
 				echo str_replace( array( "\n", "\r" ), '', str_replace( "'", '"', $html ) );

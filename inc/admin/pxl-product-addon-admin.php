@@ -6,12 +6,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 class PXL_Product_Addon_Admin {
 
 	public function __construct() {
-		//add_action( 'admin_enqueue_scripts', array( $this, 'styles' ), 100 );
+		add_action( 'admin_enqueue_scripts', array( $this, 'styles' ), 100 );
 		add_action( 'admin_menu', array( $this, 'admin_menu' ), 9 );
 		//add_filter( 'woocommerce_screen_ids', array( $this, 'add_screen_id' ) );
 		//add_action( 'woocommerce_product_write_panel_tabs', array( $this, 'tab' ) );
 		//add_action( 'woocommerce_product_data_panels', array( $this, 'panel' ) );
 		//add_action( 'woocommerce_process_product_meta', array( $this, 'process_meta_box' ), 1 );
+	}
+
+	public function styles() {
+		//wp_enqueue_script( 'wc-enhanced-select' );
+		wp_enqueue_style( 'pxl_product_addons_css', plugins_url( '../assets/css/admin.css', __FILE__ ), array('woocommerce_admin_styles') );
 	}
 
 	public function admin_menu() {
