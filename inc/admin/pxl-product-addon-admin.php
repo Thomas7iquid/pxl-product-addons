@@ -226,4 +226,41 @@ class PXL_Product_Addon_Admin {
 
 		return $product_addons;
 	}
+
+	public function process_meta_box( $post_id ) {
+		// Save addons as serialised array.
+		$product_addons                = $this->get_posted_product_addons();
+		$product_addons_exclude_global = isset( $_POST['_product_addons_exclude_global'] ) ? 1 : 0;
+
+		$product = wc_get_product( $post_id );
+		$product->update_meta_data( '_product_addons', $product_addons );
+		$product->update_meta_data( '_product_addons_exclude_global', $product_addons_exclude_global );
+		$product->save();
+	}
+
+	public static function get_new_addon_option() {
+		$new_addon_option = array(
+			'label' => '',
+			'image' => '',
+			'price' => '',
+			'default' => '',
+			'min' => '',
+			'max' => ''
+		);
+
+		return apply_filters( 'lafka_product_addons_new_addon_option', $new_addon_option );
+	}
+
+	public static function lafka_get_addons_variations_attribute_values( $taxonomy ) {
+		$to_return = array();
+
+		if ( taxonomy_exists( $taxonomy ) ) {
+			$terms = get_terms( $taxonomy, 'hide_empty=0' );
+			foreach ( $terms as $term ) {
+				$to_return[$taxonomy][ $term->slug ] = htmlspecialchars( $term->name );
+			}
+		}
+
+		return $to_return;
+	}
 }
