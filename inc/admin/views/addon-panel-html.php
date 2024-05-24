@@ -105,7 +105,7 @@ $empty_name_message = esc_html__( 'All addon fields require a name.', 'lafka-plu
 			var html = '<?php
 				ob_start();
 
-				$option = Lafka_Product_Addon_Admin::get_new_addon_option();
+				$option = PXL_Product_Addon_Admin::get_new_addon_option();
 				$loop = "{loop}";
 
 				include( dirname( __FILE__ ) . '/html-addon-option.php' );
@@ -149,7 +149,7 @@ $empty_name_message = esc_html__( 'All addon fields require a name.', 'lafka-plu
 				$addon['type']          = 'checkbox';
 				$addon['variations']    = '';
 				$addon['options']       = array(
-					Lafka_Product_Addon_Admin::get_new_addon_option()
+					PXL_Product_Addon_Admin::get_new_addon_option()
 				);
 				$loop = "{loop}";
 
