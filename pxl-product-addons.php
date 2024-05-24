@@ -1,11 +1,12 @@
 <?php
 /**
  * Plugin Name: PXL Product Addons
+ * Plugin URI: https://7iquid.tech/
  * Description: PXL Product Addons
- * Plugin URI:  https://7iquid.tech/
- * Version:     1.0.0
- * Author:      PXL Team
+ * Version: 1.0.0
+ * Author: PXL Team
  * Author URI:  https://themeforest.net/user/7iquid/portfolio
  * Update URI:  https://7iquid.tech/
- * Text Domain: pxl-product-addons
+ * Text Domain: pxl-hotel-booking
  */
+?>
