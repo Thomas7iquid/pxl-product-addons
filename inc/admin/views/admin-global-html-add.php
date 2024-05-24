@@ -57,7 +57,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<?php
 						$exists = false;
 					    $attribute_taxonomies = wc_get_attribute_taxonomies();
-						include( dirname( __FILE__ ) . '/html-addon-panel.php' );
+						include( dirname( __FILE__ ) . '/addon-panel-html.php' );
 					?>
 				</td>
 			</tr>
