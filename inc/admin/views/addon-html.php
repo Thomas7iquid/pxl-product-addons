@@ -77,7 +77,7 @@ global $post;
 			            <?php foreach ( $attribute_taxonomies as $tax ): ?>
 				            <?php $addon_attribute = isset($addon['attribute']) ? $addon['attribute'] : ''; ?>
                             <option <?php selected( $tax->attribute_id, $addon_attribute ); ?> value="<?php esc_attr_e( $tax->attribute_id ); ?>"
-                                data-attribute-values="<?php esc_attr_e( htmlspecialchars(json_encode( Lafka_Product_Addon_Admin::lafka_get_addons_variations_attribute_values( wc_attribute_taxonomy_name_by_id( (int) $tax->attribute_id ) ) ) ) ); ?>">
+                                data-attribute-values="<?php esc_attr_e( htmlspecialchars(json_encode( PXL_Product_Addon_Admin::lafka_get_addons_variations_attribute_values( wc_attribute_taxonomy_name_by_id( (int) $tax->attribute_id ) ) ) ) ); ?>">
                                 <?php esc_html_e( $tax->attribute_label ); ?>
                             </option>
 			            <?php endforeach; ?>
@@ -104,7 +104,7 @@ global $post;
                                 <th class="image_column"><?php esc_html_e('Image', 'lafka-plugin'); ?></th>
 								<?php
                                     if(isset($addon['variations']) && $addon['variations'] === 1 && is_int($addon['attribute'])) {
-	                                    $attribute_values = Lafka_Product_Addon_Admin::lafka_get_addons_variations_attribute_values( wc_attribute_taxonomy_name_by_id( $addon['attribute'] ) );
+	                                    $attribute_values = PXL_Product_Addon_Admin::lafka_get_addons_variations_attribute_values( wc_attribute_taxonomy_name_by_id( $addon['attribute'] ) );
                                     }
                                 ?>
 								<?php if (isset($addon['variations']) && $addon['variations'] === 1 && !empty( $attribute_values ) ): ?>

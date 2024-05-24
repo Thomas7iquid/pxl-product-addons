@@ -66,7 +66,7 @@ class PXL_Product_Addon_Admin {
 
 			} else {
 
-				$global_addons_count = wp_count_posts( 'lafka_glb_addon' );
+				$global_addons_count = wp_count_posts( 'pxl_global_addon' );
 				$reference           = __( 'Global Add-on Group', 'lafka-plugin' ) . ' #' . ( $global_addons_count->publish + 1 );
 				$priority            = 10;
 				$objects             = array( 0 );
@@ -94,7 +94,7 @@ class PXL_Product_Addon_Admin {
 		$product_addons = $this->get_posted_product_addons();
 
 		if ( ! $reference ) {
-			$global_addons_count = wp_count_posts( 'lafka_glb_addon' );
+			$global_addons_count = wp_count_posts( 'pxl_global_addon' );
 			$reference           = __( 'Global Add-on Group', 'lafka-plugin' ) . ' #' . ( $global_addons_count->publish + 1 );
 		}
 
@@ -117,7 +117,7 @@ class PXL_Product_Addon_Admin {
 			$edit_id = wp_insert_post( apply_filters( 'lafka_product_addons_global_insert_post_args', array(
 				'post_title'    => $reference,
 				'post_status'   => 'publish',
-				'post_type'		=> 'lafka_glb_addon',
+				'post_type'		=> 'pxl_global_addon',
 				'tax_input'     => array(
 					'product_cat' => $objects
 				)
