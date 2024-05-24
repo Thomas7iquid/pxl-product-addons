@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     <td class="image_column">
 		<?php $image_input_name = 'product_addon_option_image[' . $loop . '][]'; ?>
 		<?php $image_input_id = 'product_addon_option_image_' . $loop . '_' . uniqid(); ?>
-		<?php echo lafka_medialibrary_uploader( $image_input_id, (empty($option['image']) ? '' : $option['image']), '', $image_input_name, false, true ); ?>
+		<?php //echo lafka_medialibrary_uploader( $image_input_id, (empty($option['image']) ? '' : $option['image']), '', $image_input_name, false, true ); ?>
     </td>
 	<?php
 	if(isset($addon['variations']) && $addon['variations'] === 1 && is_int($addon['attribute'])) {
