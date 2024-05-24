@@ -31,3 +31,5 @@ class Class_PXL_Product_Addons {
 		$GLOBALS['PXL_Product_Addon_Admin'] = new PXL_Product_Addon_Admin();
 	}
 }
+
+new Class_PXL_Product_Addons();

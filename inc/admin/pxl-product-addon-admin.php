@@ -74,7 +74,7 @@ class PXL_Product_Addon_Admin {
 
 			}
 
-			//include( dirname( __FILE__ ) . '/views/html-global-admin-add.php' );
+			include( dirname( __FILE__ ) . '/views/admin-global-html-add.php' );
 		} else {
 
 			if ( ! empty( $_GET['delete'] ) && wp_verify_nonce( $_REQUEST['_wpnonce'], 'delete_addon' ) ) {
@@ -82,7 +82,7 @@ class PXL_Product_Addon_Admin {
 				echo '<div class="updated"><p>' . esc_html__( 'Add-on deleted successfully', 'lafka-plugin' ) . '</p></div>';
 			}
 
-			//include( dirname( __FILE__ ) . '/views/html-global-admin.php' );
+			include( dirname( __FILE__ ) . '/view/admin-global-html.php' );
 		}
 	}
 

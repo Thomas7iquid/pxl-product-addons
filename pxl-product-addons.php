@@ -23,6 +23,8 @@ define('PHB_PLUGIN_FILE', __FILE__ );
 
 class Pxl_Product_Addons {
 
+    private static $instance = null;
+
     public function __construct(){
         $this->file = __FILE__;
         $this->plugin_path = plugin_dir_path(__FILE__);
@@ -39,7 +41,7 @@ class Pxl_Product_Addons {
     }
 
     private function includes() {
-        require_once( plugin_dir_path( __FILE__ ) . '/incl/addons/lafka-product-addons.php' );
+        require_once( plugin_dir_path( __FILE__ ) . '/inc/class-pxl-product-addons.php' );
     }
 
     public function init() {
