@@ -62,3 +62,40 @@ class Class_PXL_Product_Addons {
 }
 
 new Class_PXL_Product_Addons();
+
+function lafka_get_option_price_on_default_attribute( $product, $option_price ) {
+	if ( is_array( $option_price ) ) {
+		$to_return          = null;
+		$default_attributes = $product->get_default_attributes();
+		foreach ( $default_attributes as $tax => $value ) {
+			if ( isset( $option_price[ $tax ][ $value ] ) ) {
+				$to_return = $option_price[ $tax ][ $value ];
+			}
+		}
+
+		if ( is_null( $to_return ) ) {
+			// reset returns first element
+			$to_return = reset( $option_price );
+		}
+
+		return $to_return;
+	} else {
+		return $option_price;
+	}
+}
+
+function lafka_convert_attribute_raw_prices_to_prices( $raw_attribute_prices ) {
+	if ( is_array( $raw_attribute_prices ) ) {
+		foreach ( $raw_attribute_prices as $attribute => $prices ) {
+			if ( is_array( $prices ) ) {
+				foreach ( $prices as $attr_value => $price ) {
+					if ( is_numeric( $price ) ) {
+						$raw_attribute_prices[ $attribute ][ $attr_value ] = WC_Product_Addons_Helper::get_product_addon_price_for_display( $price );
+					}
+				}
+			}
+		}
+	}
+
+	return $raw_attribute_prices;
+}
