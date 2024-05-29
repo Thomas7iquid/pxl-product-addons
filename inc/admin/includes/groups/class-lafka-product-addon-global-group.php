@@ -63,7 +63,7 @@ class Product_Addon_Global_Group {
 			array(
 				'post_title'	=> 'Untitled',
 				'post_status'	=> 'publish',
-				'post_type'		=> 'lafka_glb_addon',
+				'post_type'		=> 'pxl_global_addon',
 			)
 		);
 
@@ -83,7 +83,7 @@ class Product_Addon_Global_Group {
 	 */
 	static public function update_group( $post, $args ) {
 		// Make sure this is a global add-ons $post
-		if ( 'lafka_glb_addon' !== $post->post_type ) {
+		if ( 'pxl_global_addon' !== $post->post_type ) {
 			return new WP_Error( 'internal_error', 'Attempted to update a post which is not a global add-ons group custom post type' );
 		}
 

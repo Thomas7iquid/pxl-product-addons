@@ -15,7 +15,7 @@ class Lafka_Product_Addon_Groups {
 			'posts_per_page'  => -1,
 			'orderby'         => 'title',
 			'order'           => 'ASC',
-			'post_type'       => 'lafka_glb_addon',
+			'post_type'       => 'pxl_global_addon',
 			'post_status'     => 'any',
 			'suppress_filters' => true
 		);
@@ -105,7 +105,7 @@ class Lafka_Product_Addon_Groups {
 			return false;
 		}
 
-		return ( 'lafka_glb_addon' === $post->post_type );
+		return ( 'pxl_global_addon' === $post->post_type );
 	}
 
 	/**

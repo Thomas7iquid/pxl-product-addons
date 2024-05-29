@@ -58,7 +58,7 @@ if (!class_exists('WC_Product_Addons_Helper')) {
 					'orderby'          => 'meta_value',
 					'order'            => 'ASC',
 					'meta_key'         => '_priority',
-					'post_type'        => 'lafka_glb_addon',
+					'post_type'        => 'pxl_global_addon',
 					'post_status'      => 'publish',
 					'suppress_filters' => true,
 					'meta_query'       => array(
@@ -85,7 +85,7 @@ if (!class_exists('WC_Product_Addons_Helper')) {
 						'orderby'          => 'meta_value',
 						'order'            => 'ASC',
 						'meta_key'         => '_priority',
-						'post_type'        => 'lafka_glb_addon',
+						'post_type'        => 'pxl_global_addon',
 						'post_status'      => 'publish',
 						'suppress_filters' => true,
 						'tax_query'        => array(
