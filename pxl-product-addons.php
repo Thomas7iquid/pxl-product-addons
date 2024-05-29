@@ -16,11 +16,12 @@ if (!defined('ABSPATH')) {
 
 define('PHB_TEXT_DOMAIN', 'pxl-product-addons');
 define('PHB_VERSION', '1.0.1');
-define('PHB_NAME', 'PXL Hotel Booking');
+define('PHB_NAME', 'PXL Product Addons');
 define('PHB_PATH', plugin_dir_path(__FILE__));
 define('PHB_URL', plugin_dir_url(__FILE__));
 define('PHB_PLUGIN_FILE', __FILE__ );
 
+#[AllowDynamicProperties]
 class Pxl_Product_Addons {
 
     private static $instance = null;
