@@ -24,6 +24,15 @@ class Class_PXL_Product_Addons {
 		if ( is_admin() ) {
 			$this->init_admin();
 		}
+
+		// Front-side
+		include_once( dirname( __FILE__ ) . '/includes/class-lafka-product-addon-display.php' );
+		include_once( dirname( __FILE__ ) . '/includes/class-lafka-product-addon-cart.php' );
+		// Helper class used by other plugins for compatibility
+		include_once( dirname( __FILE__ ) . '/includes/class-lafka-product-addons-helper.php' );
+
+		$GLOBALS['Product_Addon_Display'] = new Lafka_Product_Addon_Display();
+		$GLOBALS['Product_Addon_Cart']    = new Lafka_Product_Addon_Cart();
 	}
 
 	protected function init_admin() {
