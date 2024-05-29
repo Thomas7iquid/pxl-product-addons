@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<a href="#" class="close_all"><?php esc_html_e( 'Close all', 'lafka-plugin' ); ?></a> / <a href="#" class="expand_all"><?php esc_html_e( 'Expand all', 'lafka-plugin' ); ?></a>
 	</p>
 
-	<div class="lafka_product_addons wc-metaboxes">
+	<div class="Pxl_Product_Addons wc-metaboxes">
 
 		<?php
 			$loop = 0;
@@ -43,7 +43,7 @@ $empty_name_message = esc_html__( 'All addon fields require a name.', 'lafka-plu
 	jQuery(function( $ ){
 		$( '.product_page_global_addons' ).on( 'click', 'input[type="submit"]', function( e ) {
 			// Loop through all addons to validate them.
-			$( '.lafka_product_addons' ).find( '.lafka_product_addon' ).each( function() {
+			$( '.Pxl_Product_Addons' ).find( '.lafka_product_addon' ).each( function() {
 				if ( 0 === $( this ).find( '.addon_name input' ).val().length ) {
 					e.preventDefault();
 
@@ -132,8 +132,8 @@ $empty_name_message = esc_html__( 'All addon fields require a name.', 'lafka-plu
 		})
 		.on( 'click', '.add_new_addon', function() {
 
-			var loop = jQuery('.lafka_product_addons .lafka_product_addon').length;
-			var total_add_ons = jQuery( '.lafka_product_addons .lafka_product_addon' ).length;
+			var loop = jQuery('.Pxl_Product_Addons .lafka_product_addon').length;
+			var total_add_ons = jQuery( '.Pxl_Product_Addons .lafka_product_addon' ).length;
 
 			if ( total_add_ons >= 1 ) {
 				jQuery( '.lafka-product-add-ons-toolbar--open-close' ).show();
@@ -160,7 +160,7 @@ $empty_name_message = esc_html__( 'All addon fields require a name.', 'lafka-plu
 			?>';
 
 			html = html.replace( /{loop}/g, loop );
-			jQuery('.lafka_product_addons').append( html );
+			jQuery('.Pxl_Product_Addons').append( html );
             jQuery('select.product_addon_type').trigger( 'change' );
             lafka_handle_admin_variation_addons();
             lafka_handle_admin_variation_addons_prices(jQuery('.wc-metabox-content'));
@@ -177,7 +177,7 @@ $empty_name_message = esc_html__( 'All addon fields require a name.', 'lafka-plu
 				jQuery(addon).remove();
 			}
 			
-			jQuery( '.lafka_product_addons .lafka_product_addon' ).each( function( index, el ) {
+			jQuery( '.Pxl_Product_Addons .lafka_product_addon' ).each( function( index, el ) {
 				var this_index = index;
 
 				jQuery( this ).find( '.product_addon_position' ).val( this_index );
@@ -212,7 +212,7 @@ $empty_name_message = esc_html__( 'All addon fields require a name.', 'lafka-plu
         lafka_handle_admin_variation_addons();
 
         // Sortable
-		jQuery('.lafka_product_addons').sortable({
+		jQuery('.Pxl_Product_Addons').sortable({
 			items:'.lafka_product_addon',
 			cursor:'move',
 			axis:'y',
@@ -231,7 +231,7 @@ $empty_name_message = esc_html__( 'All addon fields require a name.', 'lafka-plu
 		});
 
 		function addon_row_indexes() {
-			jQuery('.lafka_product_addons .lafka_product_addon').each(function(index, el){ jQuery('.product_addon_position', el).val( parseInt( jQuery(el).index('.lafka_product_addons .lafka_product_addon') ) ); });
+			jQuery('.Pxl_Product_Addons .lafka_product_addon').each(function(index, el){ jQuery('.product_addon_position', el).val( parseInt( jQuery(el).index('.Pxl_Product_Addons .lafka_product_addon') ) ); });
 		};
 
 		// Sortable options
@@ -255,7 +255,7 @@ $empty_name_message = esc_html__( 'All addon fields require a name.', 'lafka-plu
 		});
 
 		// Remove option
-        $('.lafka_product_addons.wc-metaboxes').on('click', 'button.remove_addon_option', function (e) {
+        $('.Pxl_Product_Addons.wc-metaboxes').on('click', 'button.remove_addon_option', function (e) {
 			var answer = confirm('<?php esc_html_e('Are you sure you want delete this option?', 'lafka-plugin'); ?>');
 
 			if (answer) {
@@ -269,13 +269,13 @@ $empty_name_message = esc_html__( 'All addon fields require a name.', 'lafka-plu
 		});
 
 		// Show / hide expand/close
-		var total_add_ons = jQuery( '.lafka_product_addons .lafka_product_addon' ).length;
+		var total_add_ons = jQuery( '.Pxl_Product_Addons .lafka_product_addon' ).length;
 		if ( total_add_ons > 1 ) {
 			jQuery( '.lafka-product-add-ons-toolbar--open-close' ).show();
 		}
 
         // Manage population of hidden inputs for checkboxes and radios
-        $('.lafka_product_addons.wc-metaboxes').on('change', '.lafka-is-default-switch', function (e) {
+        $('.Pxl_Product_Addons.wc-metaboxes').on('change', '.lafka-is-default-switch', function (e) {
             var $all_radio_option_values = $(this).closest('.lafka_product_addon.wc-metabox').find('input.lafka-is-default-value');
 
             if ($all_radio_option_values.length) {
@@ -289,7 +289,7 @@ $empty_name_message = esc_html__( 'All addon fields require a name.', 'lafka-plu
         });
 
 		// Switch input types depending on the selected type
-        $('.lafka_product_addons.wc-metaboxes').on('change', 'select.product_addon_type', function (e) {
+        $('.Pxl_Product_Addons.wc-metaboxes').on('change', 'select.product_addon_type', function (e) {
             var $selected_type = $(this).val();
             $(this).closest('.lafka_product_addon.wc-metabox').find('input.lafka-is-default-switch').each(function (index) {
                 if ($selected_type === 'checkbox') {

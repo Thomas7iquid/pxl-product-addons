@@ -35,7 +35,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 								} else {
 									$objects = array_keys( $restrict_to_categories );
 									$term_names = array_values( $restrict_to_categories );
-									$term_names = apply_filters( 'lafka_product_addons_global_display_term_names', $term_names, $objects );
+									$term_names = apply_filters( 'Pxl_Product_Addons_global_display_term_names', $term_names, $objects );
 									echo implode( ', ', $term_names );
 								}
 

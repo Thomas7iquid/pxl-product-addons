@@ -15,7 +15,7 @@ class Product_Addon_Product_Group {
 			throw new Exception( 'Product_Addon_Product_Group::Invalid argument supplied to get_group' );
 		}
 
-		$term_ids = (array) wp_get_post_terms( $post->ID, apply_filters( 'lafka_product_addons_global_post_terms', array( 'product_cat' ) ), array( 'fields' => 'ids' ) );
+		$term_ids = (array) wp_get_post_terms( $post->ID, apply_filters( 'Pxl_Product_Addons_global_post_terms', array( 'product_cat' ) ), array( 'fields' => 'ids' ) );
 		$fields   = array_filter( (array) get_post_meta( $post->ID, '_product_addons', true ) );
 		$fields   = Product_Addon_Groups::coerce_options_to_remove_field_type_inappropriate_keys( $fields );
 

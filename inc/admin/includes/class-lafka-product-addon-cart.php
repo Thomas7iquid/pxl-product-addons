@@ -43,7 +43,7 @@ class Lafka_Product_Addon_Cart {
 	 * @return array
 	 */
 	public function add_cart_item( $cart_item ) {
-		if ( ! empty( $cart_item['addons'] ) && apply_filters( 'lafka_product_addons_adjust_price', true, $cart_item ) ) {
+		if ( ! empty( $cart_item['addons'] ) && apply_filters( 'Pxl_Product_Addons_adjust_price', true, $cart_item ) ) {
 			$price = (float) $cart_item['data']->get_price( 'edit' );
 
 			// Compatibility with Smart Coupons self declared gift amount purchase.

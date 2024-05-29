@@ -50,7 +50,7 @@ class PXL_Product_Addon_Admin {
 
 				$reference      = $global_addon->post_title;
 				$priority       = get_post_meta( $global_addon->ID, '_priority', true );
-				$objects        = (array) wp_get_post_terms( $global_addon->ID, apply_filters( 'lafka_product_addons_global_post_terms', array( 'product_cat' ) ), array( 'fields' => 'ids' ) );
+				$objects        = (array) wp_get_post_terms( $global_addon->ID, apply_filters( 'Pxl_Product_Addons_global_post_terms', array( 'product_cat' ) ), array( 'fields' => 'ids' ) );
 				$product_addons = array_filter( (array) get_post_meta( $global_addon->ID, '_product_addons', true ) );
 
 				if ( get_post_meta( $global_addon->ID, '_all_products', true ) == 1 ) {
@@ -62,7 +62,7 @@ class PXL_Product_Addon_Admin {
 				$global_addon   = get_post( $edit_id );
 				$reference      = $global_addon->post_title;
 				$priority       = get_post_meta( $global_addon->ID, '_priority', true );
-				$objects        = (array) wp_get_post_terms( $global_addon->ID, apply_filters( 'lafka_product_addons_global_post_terms', array( 'product_cat' ) ), array( 'fields' => 'ids' ) );
+				$objects        = (array) wp_get_post_terms( $global_addon->ID, apply_filters( 'Pxl_Product_Addons_global_post_terms', array( 'product_cat' ) ), array( 'fields' => 'ids' ) );
 				$product_addons = array_filter( (array) get_post_meta( $global_addon->ID, '_product_addons', true ) );
 
 				if ( get_post_meta( $global_addon->ID, '_all_products', true ) == 1 ) {
@@ -115,11 +115,11 @@ class PXL_Product_Addon_Admin {
 
 			wp_update_post( $edit_post );
 			wp_set_post_terms( $edit_id, $objects, 'product_cat', false );
-			do_action( 'lafka_product_addons_global_edit_addons', $edit_post, $objects );
+			do_action( 'Pxl_Product_Addons_global_edit_addons', $edit_post, $objects );
 
 		} else {
 
-			$edit_id = wp_insert_post( apply_filters( 'lafka_product_addons_global_insert_post_args', array(
+			$edit_id = wp_insert_post( apply_filters( 'Pxl_Product_Addons_global_insert_post_args', array(
 				'post_title'    => $reference,
 				'post_status'   => 'publish',
 				'post_type'		=> 'pxl_global_addon',
@@ -223,7 +223,7 @@ class PXL_Product_Addon_Admin {
 				$data['required']    = isset( $addon_required[ $i ] ) ? 1 : 0;
 
 				// Add to array.
-				$product_addons[] = apply_filters( 'lafka_product_addons_save_data', $data, $i );
+				$product_addons[] = apply_filters( 'Pxl_Product_Addons_save_data', $data, $i );
 			}
 		}
 
@@ -253,7 +253,7 @@ class PXL_Product_Addon_Admin {
 			'max' => ''
 		);
 
-		return apply_filters( 'lafka_product_addons_new_addon_option', $new_addon_option );
+		return apply_filters( 'Pxl_Product_Addons_new_addon_option', $new_addon_option );
 	}
 
 	public static function lafka_get_addons_variations_attribute_values( $taxonomy ) {

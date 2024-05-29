@@ -44,7 +44,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 								}
 							?>
 						</optgroup>
-						<?php do_action( 'lafka_product_addons_global_edit_objects', $objects ); ?>
+						<?php do_action( 'Pxl_Product_Addons_global_edit_objects', $objects ); ?>
 					</select>
 					<p class="description"><?php esc_html_e( 'Choose categories which should show these addons (or apply to all products).', 'lafka-plugin' ); ?></p>
 				</td>

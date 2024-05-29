@@ -94,7 +94,7 @@ global $post;
 					<textarea cols="20" id="addon_description_<?php echo $loop; ?>" rows="3" name="product_addon_description[<?php echo $loop; ?>]"><?php echo esc_textarea( $addon['description'] ) ?></textarea>
 				</td>
 			</tr>
-			<?php do_action( 'lafka_product_addons_panel_before_options', $post, $addon, $loop ); ?>
+			<?php do_action( 'Pxl_Product_Addons_panel_before_options', $post, $addon, $loop ); ?>
 			<tr>
 				<td class="data" colspan="3">
 					<table cellspacing="0" cellpadding="0">
@@ -118,7 +118,7 @@ global $post;
 								<?php endif; ?>
                                 <th class="minmax_column"><span class="column-title"><?php esc_html_e('Min / Max', 'lafka-plugin'); ?></span></th>
                                 <th width="10%" class="lafka-is-default-column"><?php esc_html_e('Default Value', 'lafka-plugin'); ?></th>
-								<?php do_action( 'lafka_product_addons_panel_option_heading', $post, $addon, $loop ); ?>
+								<?php do_action( 'Pxl_Product_Addons_panel_option_heading', $post, $addon, $loop ); ?>
 								<th width="1%"></th>
 							</tr>
 						</thead>

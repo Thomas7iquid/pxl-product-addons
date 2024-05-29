@@ -171,7 +171,7 @@ class Lafka_Product_Addon_Display {
 			$raw_price = wc_get_price_including_tax( $the_product );
 		}
 
-		echo '<div id="product-addons-total" data-show-sub-total="' . ( apply_filters( 'lafka_product_addons_show_grand_total', true, $the_product ) ? 1 : 0 ) . '" data-type="' . esc_attr( $the_product->get_type() ) . '" data-tax-mode="' . esc_attr( $tax_mode ) . '" data-tax-display-mode="' . esc_attr( $tax_display_mode ) . '" data-price="' . esc_attr( $display_price ) . '" data-raw-price="' . esc_attr( $raw_price ) . '" data-product-id="' . esc_attr( $post_id ) . '"></div>';
+		echo '<div id="product-addons-total" data-show-sub-total="' . ( apply_filters( 'Pxl_Product_Addons_show_grand_total', true, $the_product ) ? 1 : 0 ) . '" data-type="' . esc_attr( $the_product->get_type() ) . '" data-tax-mode="' . esc_attr( $tax_mode ) . '" data-tax-display-mode="' . esc_attr( $tax_display_mode ) . '" data-price="' . esc_attr( $display_price ) . '" data-raw-price="' . esc_attr( $raw_price ) . '" data-product-id="' . esc_attr( $post_id ) . '"></div>';
 	}
 
 	/**
@@ -309,7 +309,7 @@ class Lafka_Product_Addon_Display {
 			return $url;
 		}
 
-		if ( ! is_single( $product->get_id() ) && in_array( $product->get_type(), apply_filters( 'lafka_product_addons_add_to_cart_product_types', array( 'subscription', 'simple' ) ) ) && ( ! isset( $_GET['wc-api'] ) || 'WC_Quick_View' !== $_GET['wc-api'] ) ) {
+		if ( ! is_single( $product->get_id() ) && in_array( $product->get_type(), apply_filters( 'Pxl_Product_Addons_add_to_cart_product_types', array( 'subscription', 'simple' ) ) ) && ( ! isset( $_GET['wc-api'] ) || 'WC_Quick_View' !== $_GET['wc-api'] ) ) {
 			if ( $this->check_required_addons( $product->get_id() ) ) {
 				$url = apply_filters( 'addons_add_to_cart_url', get_permalink( $product->get_id() ) );
 			}

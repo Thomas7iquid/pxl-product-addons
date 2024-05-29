@@ -7,21 +7,21 @@
     padding: 7px 9px
 }
 
-.global-addons-form td.postbox, .lafka_product_addons td.postbox {
+.global-addons-form td.postbox, .Pxl_Product_Addons td.postbox {
     padding: 0 !important
 }
 
-.global-addons-form td label, .lafka_product_addons td label {
+.global-addons-form td label, .Pxl_Product_Addons td label {
     margin: 0;
     width: auto
 }
 
-.global-addons-form .addon_checkbox label, .lafka_product_addons .addon_checkbox label {
+.global-addons-form .addon_checkbox label, .Pxl_Product_Addons .addon_checkbox label {
     display: block;
     float: none
 }
 
-.global-addons-form .addon_checkbox input, .lafka_product_addons .addon_checkbox input {
+.global-addons-form .addon_checkbox input, .Pxl_Product_Addons .addon_checkbox input {
     width: 16px !important;
     min-width: 0 !important
 }
@@ -87,10 +87,10 @@
     min-width: 16px;
     width: 16px;
 }
-#product_addons_data .lafka_product_addons td.addon_checkbox label {
+#product_addons_data .Pxl_Product_Addons td.addon_checkbox label {
     line-height: normal;
 }
-#product_addons_data .lafka_product_addons td.addon_checkbox input[type="checkbox"] {
+#product_addons_data .Pxl_Product_Addons td.addon_checkbox input[type="checkbox"] {
     margin-right: 0.25rem;
 }
 div.lafka_product_addon .wc-metabox-content td.label_column {
