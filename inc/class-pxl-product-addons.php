@@ -15,10 +15,10 @@ class Class_PXL_Product_Addons {
 
 	public function init_classes() {
 		// Core (models)
-		include_once( dirname( __FILE__ ) . '/admin/includes/groups/class-lafka-product-addon-group-validator.php' );
-		include_once( dirname( __FILE__ ) . '/admin/includes/groups/class-lafka-product-addon-global-group.php' );
-		include_once( dirname( __FILE__ ) . '/admin/includes/groups/class-lafka-product-addon-product-group.php' );
-		include_once( dirname( __FILE__ ) . '/admin/includes/groups/class-lafka-product-addon-groups.php' );
+		include_once( dirname( __FILE__ ) . '/includes/groups/class-lafka-product-addon-group-validator.php' );
+		include_once( dirname( __FILE__ ) . '/includes/groups/class-lafka-product-addon-global-group.php' );
+		include_once( dirname( __FILE__ ) . '/includes/groups/class-lafka-product-addon-product-group.php' );
+		include_once( dirname( __FILE__ ) . '/includes/groups/class-lafka-product-addon-groups.php' );
 
 		// Admin
 		if ( is_admin() ) {
@@ -26,10 +26,10 @@ class Class_PXL_Product_Addons {
 		}
 
 		// Front-side
-		include_once( dirname( __FILE__ ) . '/admin//includes/class-lafka-product-addon-display.php' );
-		include_once( dirname( __FILE__ ) . '/admin//includes/class-lafka-product-addon-cart.php' );
+		include_once( dirname( __FILE__ ) . '/includes/class-lafka-product-addon-display.php' );
+		include_once( dirname( __FILE__ ) . '/includes/class-lafka-product-addon-cart.php' );
 		// Helper class used by other plugins for compatibility
-		include_once( dirname( __FILE__ ) . '/admin//includes/class-lafka-product-addons-helper.php' );
+		include_once( dirname( __FILE__ ) . '/includes/class-lafka-product-addons-helper.php' );
 
 		$GLOBALS['Product_Addon_Display'] = new Lafka_Product_Addon_Display();
 		$GLOBALS['Product_Addon_Cart']    = new Lafka_Product_Addon_Cart();
