@@ -29,7 +29,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<td><?php echo sizeof( $global_addon['fields'] ); ?></td>
 							<td><?php echo $global_addon['priority']; ?></td>
 							<td><?php
-
 								$restrict_to_categories = $global_addon['restrict_to_categories'];
 								if ( 0 === count( $restrict_to_categories) ) {
 									esc_html_e( 'All Products', 'lafka-plugin' );
