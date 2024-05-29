@@ -101,7 +101,6 @@ global $post;
 						<thead>
 							<tr>
 								<th class="label_column"><?php esc_html_e('Label', 'lafka-plugin'); ?></th>
-                                <th class="image_column"><?php esc_html_e('Image', 'lafka-plugin'); ?></th>
 								<?php
                                     if(isset($addon['variations']) && $addon['variations'] === 1 && is_int($addon['attribute'])) {
 	                                    $attribute_values = PXL_Product_Addon_Admin::lafka_get_addons_variations_attribute_values( wc_attribute_taxonomy_name_by_id( $addon['attribute'] ) );
