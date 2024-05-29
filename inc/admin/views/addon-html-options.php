@@ -7,11 +7,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<td class="label_column">
         <input type="text" name="product_addon_option_label[<?php echo $loop; ?>][]" value="<?php echo esc_attr( $option['label'] ); ?>" placeholder="<?php esc_html_e( 'Default Label', 'lafka-plugin' ); ?>" />
     </td>
-    <td class="image_column">
-		<?php $image_input_name = 'product_addon_option_image[' . $loop . '][]'; ?>
-		<?php $image_input_id = 'product_addon_option_image_' . $loop . '_' . uniqid(); ?>
-		<?php //echo lafka_medialibrary_uploader( $image_input_id, (empty($option['image']) ? '' : $option['image']), '', $image_input_name, false, true ); ?>
-    </td>
 	<?php
 	if(isset($addon['variations']) && $addon['variations'] === 1 && is_int($addon['attribute'])) {
 		$attribute_values = PXL_Product_Addon_Admin::lafka_get_addons_variations_attribute_values( wc_attribute_taxonomy_name_by_id( $addon['attribute'] ) );
