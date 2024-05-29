@@ -15,10 +15,10 @@ class Class_PXL_Product_Addons {
 
 	public function init_classes() {
 		// Core (models)
-		include_once( dirname( __FILE__ ) . 'admin/includes/groups/class-lafka-product-addon-group-validator.php' );
-		include_once( dirname( __FILE__ ) . 'admin/includes/groups/class-lafka-product-addon-global-group.php' );
-		include_once( dirname( __FILE__ ) . 'admin/includes/groups/class-lafka-product-addon-product-group.php' );
-		include_once( dirname( __FILE__ ) . 'admin/includes/groups/class-lafka-product-addon-groups.php' );
+		include_once( dirname( __FILE__ ) . '/admin/includes/groups/class-lafka-product-addon-group-validator.php' );
+		include_once( dirname( __FILE__ ) . '/admin/includes/groups/class-lafka-product-addon-global-group.php' );
+		include_once( dirname( __FILE__ ) . '/admin/includes/groups/class-lafka-product-addon-product-group.php' );
+		include_once( dirname( __FILE__ ) . '/admin/includes/groups/class-lafka-product-addon-groups.php' );
 
 		// Admin
 		if ( is_admin() ) {
