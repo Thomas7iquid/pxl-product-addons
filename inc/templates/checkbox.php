@@ -32,9 +32,6 @@ foreach ( $addon['options'] as $i => $option ) :
 
 	$attribute_raw_prices = $option['price'];
 	$attribute_prices = lafka_convert_attribute_raw_prices_to_prices( $attribute_raw_prices );
-
-	$custom_image_id      = $Product_Addon_Display->get_addon_option_custom_image_id($option);
-	$custom_image_classes = $Product_Addon_Display->get_addon_option_image_classes($custom_image_id);
 	?>
 
 	<p class="form-row form-row-wide addon-wrap-<?php echo sanitize_title( $addon['field-name'] ) . '-' . $i; ?>">
@@ -50,9 +47,6 @@ foreach ( $addon['options'] as $i => $option ) :
                         data-raw-price="<?php echo esc_attr( $option_price ); ?>"
                         data-price="<?php echo WC_Product_Addons_Helper::get_product_addon_price_for_display( $option_price ); ?>"
                         value="<?php echo sanitize_title( $option['label'] ); ?>" <?php checked( $current_value, 1 ); ?> /><?php echo ' '; ?>
-            <?php if ( $custom_image_id ): ?>
-                <?php echo wp_get_attachment_image( $custom_image_id, 'lafka-widgets-thumb', false, array( 'class' => implode( ' ', $custom_image_classes ) ) ); ?>
-            <?php endif; ?>
             <?php echo wptexturize( $option['label'] . ' ' . $price ); ?></label>
 	</p>
 

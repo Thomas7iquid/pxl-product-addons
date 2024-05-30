@@ -157,7 +157,6 @@ class PXL_Product_Addon_Admin {
 			$addon_required     = isset( $_POST['product_addon_required'] ) ? $_POST['product_addon_required'] : array();
 
 			$addon_option_label = $_POST['product_addon_option_label'];
-			$addon_option_image = $_POST['product_addon_option_image'];
 			$addon_option_price = $_POST['product_addon_option_price'];
 
 			$addon_option_min   = $_POST['product_addon_option_min'];
@@ -173,7 +172,6 @@ class PXL_Product_Addon_Admin {
 
 				$addon_options 	= array();
 				$option_label  	= $addon_option_label[ $i ];
-				$option_image   = $addon_option_image[ $i ];
 				$option_price  	= $addon_option_price[ $i ];
 				$option_min		= $addon_option_min[ $i ];
 				$option_max		= $addon_option_max[ $i ];
@@ -181,7 +179,6 @@ class PXL_Product_Addon_Admin {
 
 				for ( $ii = 0; $ii < sizeof( $option_label ); $ii++ ) {
 					$label 	= sanitize_text_field( stripslashes( $option_label[ $ii ] ) );
-					$image = sanitize_text_field( stripslashes( $option_image[ $ii ] ) );
 					if ( isset( $option_price[ $ii ] ) ) {
 						$price = wc_format_decimal( sanitize_text_field( stripslashes( $option_price[ $ii ] ) ) );
 					} else {
@@ -199,7 +196,6 @@ class PXL_Product_Addon_Admin {
 
 					$addon_options[] = array(
 						'label'   => $label,
-						'image'   => $image,
 						'price'   => $price,
 						'min'     => $min,
 						'max'     => $max,
@@ -246,7 +242,6 @@ class PXL_Product_Addon_Admin {
 	public static function get_new_addon_option() {
 		$new_addon_option = array(
 			'label' => '',
-			'image' => '',
 			'price' => '',
 			'default' => '',
 			'min' => '',

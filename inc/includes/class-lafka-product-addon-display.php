@@ -112,22 +112,12 @@ class Lafka_Product_Addon_Display {
 					continue;
 				}
 
-				$has_options_with_images = false;
-				if ( is_array( $addon['options'] ) ) {
-					foreach ( $addon['options'] as $option ) {
-						if ( ! empty( $option['image'] ) ) {
-							$has_options_with_images = true;
-						}
-					}
-				}
-
 				wc_get_template( 'addon-start.php', array(
 					'addon'       => $addon,
 					'required'    => $addon['required'],
 					'name'        => $addon['name'],
 					'description' => $addon['description'],
 					'type'        => $addon['type'],
-					'has_options_with_images' => $has_options_with_images,
 				), 'lafka-plugin', $this->plugin_path() . '/templates/' );
 
 				echo $this->get_addon_html( $addon );
@@ -364,42 +354,5 @@ class Lafka_Product_Addon_Display {
 	public function reposition_display_for_variable_product() {
 		remove_action( 'woocommerce_before_add_to_cart_button', array( $this, 'display' ), 10 );
 		add_action( 'woocommerce_single_variation', array( $this, 'display' ), 15 );
-	}
-
-	/**
-	 * Get id of the option custom image
-	 *
-	 * @param $option
-	 *
-	 * @return string
-	 */
-	public function get_addon_option_custom_image_id( $option ) : string {
-		$custom_image_id = '';
-		if ( !empty( $option['image'] ) ) {
-			$custom_image_id = $option['image'];
-		}
-
-		return $custom_image_id;
-	}
-
-	/**
-	 * Return the classes for the option image tag
-	 *
-	 * @param $custom_image_id
-	 *
-	 * @return array|string[]
-	 */
-	public function get_addon_option_image_classes( $custom_image_id ): array {
-		$custom_image_classes = array();
-
-		if ( $custom_image_id ) {
-			$custom_image_url     = wp_get_attachment_image_url( $custom_image_id );
-			$custom_image_classes = array( 'lafka-addon-image-icon' );
-			if ( substr( $custom_image_url, - 4 ) === '.svg' ) {
-				$custom_image_classes[] = 'lafka-svg-icon';
-			}
-		}
-
-		return $custom_image_classes;
 	}
 }

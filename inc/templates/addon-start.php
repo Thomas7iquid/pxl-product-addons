@@ -5,7 +5,6 @@
  * @var string $name
  * @var string $description
  * @var string $type
- * @var string $has_options_with_images
  */
 
 $classes = array( 'product-addon', sanitize_html_class( 'product-addon-' . $name ) );
@@ -17,9 +16,6 @@ if ( isset( $addon['type'] ) ) {
 }
 if ( ! empty( $addon['limit'] ) ) {
 	$classes[] = 'lafka-limit';
-}
-if ( $has_options_with_images ) {
-	$classes[] = 'lafka-addon-with-images';
 }
 ?>
 <div class="<?php echo implode( ' ', $classes ) ?>"

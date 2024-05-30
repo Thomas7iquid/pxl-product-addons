@@ -50,7 +50,6 @@ class Lafka_Product_Addon_Field_List extends Lafka_Product_Addon_Field {
 			if ( in_array( strtolower( sanitize_title( $option['label'] ) ), array_map( 'strtolower', array_values( $value ) ) ) ) {
 				$cart_item_data[] = array(
 					'name'  => $this->addon['name'],
-					'image' => $option['image'] ?? '',
 					'value' => $option['label'],
 					'price' => $this->get_option_price( $option )
 				);
