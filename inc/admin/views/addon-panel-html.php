@@ -354,6 +354,35 @@ $empty_name_message = esc_html__( 'All addon fields require a name.', 'lafka-plu
                 } else {
                     price_labels_html += '<th class="price_column"><?php esc_html_e( 'Price', 'lafka-plugin' ); ?></th>';
                 }
+                $image_column.after(price_labels_html);
+
+                var $input_column = $(this).find('td.image_column');
+                i = 0;
+                j = 0;
+                $input_column.each(function () {
+                    var price_inputs_html = '';
+                    if (is_variation) {
+                        for (const attribute_name in attribute_values) {
+                            for(const key in attribute_values[attribute_name]) {
+                                var buffer_value = "";
+                                if (current_values_buffer[i] !== undefined && current_values_buffer[i][j] !== undefined) {
+                                    buffer_value = current_values_buffer[i][j];
+                                }
+                                price_inputs_html += '<td class="price_column"><input type="text" name="product_addon_option_price[' + loop + '][' + attribute_name + '][' + key + '][]" value="' + buffer_value + '" placeholder="0.00" class="wc_input_price"></td>';
+                                j++;
+                            }
+                        }
+                    } else {
+                        var buffer_value = "";
+                        if (current_values_buffer[i] !== undefined && current_values_buffer[i][0] !== undefined) {
+                            buffer_value = current_values_buffer[i][0];
+                        }
+                        price_inputs_html += '<td class="price_column"><input type="text" name="product_addon_option_price[' + loop + '][]" value="' + buffer_value + '" placeholder="0.00" class="wc_input_price"></td>';
+                    }
+                    $(this).after(price_inputs_html);
+                    i++;
+                    j = 0;
+                });
             });
         }
     });
