@@ -16,7 +16,7 @@ class PXL_Product_Addon_Admin {
 
 	public function styles() {
 		//wp_enqueue_script( 'wc-enhanced-select' );
-		wp_enqueue_style( 'pxl_product_addons_css', plugin_dir_url( '/assets/css/admin.css', __FILE__ ), array('woocommerce_admin_styles') );
+		wp_enqueue_style( 'pxl_product_addons_css', plugin_dir_url( '/pxl-product-addons/assets/css/admin.css', __FILE__ ), array('woocommerce_admin_styles') );
 	}
 
 	public function admin_menu() {
