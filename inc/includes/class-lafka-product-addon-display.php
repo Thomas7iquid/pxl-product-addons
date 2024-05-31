@@ -105,6 +105,7 @@ class Lafka_Product_Addon_Display {
 		$product_addons = WC_Product_Addons_Helper::get_product_addons( $post_id, $prefix );
 
 		if ( is_array( $product_addons ) && count( $product_addons ) > 0 ) {
+			echo '<div class="pxl-product-addons">'
 			do_action( 'lafka-product-addons_start', $post_id );
 
 			foreach ( $product_addons as $addon ) {
@@ -128,6 +129,7 @@ class Lafka_Product_Addon_Display {
 			}
 
 			do_action( 'lafka-product-addons_end', $post_id );
+			echo '</div>'
 		}
 	}
 
