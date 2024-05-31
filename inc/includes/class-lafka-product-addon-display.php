@@ -129,7 +129,7 @@ class Lafka_Product_Addon_Display {
 			}
 
 			do_action( 'lafka-product-addons_end', $post_id );
-			echo '</div>'
+			echo '</div>';
 		}
 	}
 
