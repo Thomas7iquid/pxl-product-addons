@@ -126,7 +126,7 @@ $empty_name_message = esc_html__( 'All addon fields require a name.', 'lafka-plu
 			jQuery(this).closest('.lafka_product_addon .data').find('tbody').append( html );
 
             jQuery('select.product_addon_type').trigger( 'change' );
-            lafka_handle_admin_variation_addons_prices(jQuery(this).parents('.wc-metabox-content'));
+            //lafka_handle_admin_variation_addons_prices(jQuery(this).parents('.wc-metabox-content'));
 
 			return false;
 		})
@@ -163,7 +163,7 @@ $empty_name_message = esc_html__( 'All addon fields require a name.', 'lafka-plu
 			jQuery('.Pxl_Product_Addons').append( html );
             jQuery('select.product_addon_type').trigger( 'change' );
             lafka_handle_admin_variation_addons();
-            lafka_handle_admin_variation_addons_prices(jQuery('.wc-metabox-content'));
+            //lafka_handle_admin_variation_addons_prices(jQuery('.wc-metabox-content'));
 
 			return false;
 		})
@@ -192,10 +192,10 @@ $empty_name_message = esc_html__( 'All addon fields require a name.', 'lafka-plu
 		})
         .on('click', '.lafka-addon-variation-checkbox', function () {
             lafka_handle_admin_variation_addons();
-            lafka_handle_admin_variation_addons_prices(jQuery(this).parents('.wc-metabox-content'));
+            //lafka_handle_admin_variation_addons_prices(jQuery(this).parents('.wc-metabox-content'));
         })
         .on('change', '.lafka-addon-attributes-select', function () {
-            lafka_handle_admin_variation_addons_prices($(this).parents('.wc-metabox-content'));
+            //lafka_handle_admin_variation_addons_prices($(this).parents('.wc-metabox-content'));
         });
 
 		// Initialise all
