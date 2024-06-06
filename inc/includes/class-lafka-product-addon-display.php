@@ -120,8 +120,9 @@ class Lafka_Product_Addon_Display {
 					'description' => $addon['description'],
 					'type'        => $addon['type'],
 				), 'lafka-plugin', $this->plugin_path() . '/templates/' );
-
+				echo '<div class="addon-wrapper">'
 				echo $this->get_addon_html( $addon );
+				echo '</div>';
 
 				wc_get_template( 'addon-end.php', array('addon' => $addon), 'lafka-plugin', $this->plugin_path() . '/templates/' );
 			}
