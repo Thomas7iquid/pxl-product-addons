@@ -123,9 +123,7 @@ class Lafka_Product_Addon_Display {
 
 				echo $this->get_addon_html( $addon );
 
-				wc_get_template( 'addon-end.php', array(
-					'addon' => $addon,
-				), 'lafka-plugin', $this->plugin_path() . '/templates/' );
+				wc_get_template( 'addon-end.php', array('addon' => $addon), 'lafka-plugin', $this->plugin_path() . '/templates/' );
 			}
 
 			do_action( 'lafka-product-addons_end', $post_id );
