@@ -35,22 +35,22 @@ foreach ( $addon['options'] as $i => $option ) :
 	?>
 	<div class="form-row form-row-wide addon-wrap-<?php echo sanitize_title( $addon['field-name'] ) . '-' . $i; ?>">
 		<div class="form-group">
-			<input type="checkbox" class="addon addon-checkbox" name="addon-<?php echo sanitize_title( $addon['field-name'] ); ?>[]"
+			<input type="checkbox" id="<?php echo 'addon-' . sanitize_title( $addon['field-name'] ) . '-' . $i; ?>" class="addon addon-checkbox" name="addon-<?php echo sanitize_title( $addon['field-name'] ); ?>[]"
 			data-attribute-raw-prices="<?php echo esc_attr( json_encode( $attribute_raw_prices ) ); ?>"
 			data-attribute-prices="<?php echo esc_attr( json_encode( $attribute_prices ) ); ?>"
 			<?php $addon_attribute = isset( $addon['attribute'] ) ? wc_get_attribute( $addon['attribute'] ) : null; ?>
 			<?php if ( ! is_null( $addon_attribute ) && isset( $attribute_prices[ $addon_attribute->slug ] ) && is_array( $attribute_prices[ $addon_attribute->slug ] ) ): ?>
-			<?php foreach ( $attribute_prices[ $addon_attribute->slug ] as $attribute => $attr_price ): ?>
-				data-<?php echo esc_html( $attribute ) ?>-formatted-price="<?php echo esc_html( wc_price( $attr_price ) ) ?>"
-			<?php endforeach; ?>
-		<?php endif; ?>
-		data-raw-price="<?php echo esc_attr( $option_price ); ?>"
-		data-price="<?php echo WC_Product_Addons_Helper::get_product_addon_price_for_display( $option_price ); ?>"
-		value="<?php echo sanitize_title( $option['label'] ); ?>" <?php checked( $current_value, 1 ); ?> />
-		<label>
-			<?php echo ' '; ?>
-			<?php echo wptexturize( $option['label'] . ' ' . $price ); ?>
-		</label>
+				<?php foreach ( $attribute_prices[ $addon_attribute->slug ] as $attribute => $attr_price ): ?>
+					data-<?php echo esc_html( $attribute ) ?>-formatted-price="<?php echo esc_html( wc_price( $attr_price ) ) ?>"
+				<?php endforeach; ?>
+			<?php endif; ?>
+			data-raw-price="<?php echo esc_attr( $option_price ); ?>"
+			data-price="<?php echo WC_Product_Addons_Helper::get_product_addon_price_for_display( $option_price ); ?>"
+			value="<?php echo sanitize_title( $option['label'] ); ?>" <?php checked( $current_value, 1 ); ?> />
+			<label for="<?php echo 'addon-' . sanitize_title( $addon['field-name'] ) . '-' . $i; ?>">
+				<?php echo ' '; ?>
+				<?php echo wptexturize( $option['label'] . ' ' . $price ); ?>
+			</label>
+		</div>
 	</div>
-</div>
 <?php endforeach; ?>
