@@ -9,7 +9,7 @@ class PXL_Product_Addon_Admin {
 		add_action( 'admin_enqueue_scripts', array( $this, 'styles' ), 100 );
 		add_action( 'admin_menu', array( $this, 'admin_menu' ), 9 );
 		//add_filter( 'woocommerce_screen_ids', array( $this, 'add_screen_id' ) );
-		//add_action( 'woocommerce_product_write_panel_tabs', array( $this, 'tab' ) );
+		add_action( 'woocommerce_product_write_panel_tabs', array( $this, 'tab' ) );
 		//add_action( 'woocommerce_product_data_panels', array( $this, 'panel' ) );
 		//add_action( 'woocommerce_process_product_meta', array( $this, 'process_meta_box' ), 1 );
 	}
@@ -21,6 +21,10 @@ class PXL_Product_Addon_Admin {
 
 	public function admin_menu() {
 		$page = add_submenu_page( 'edit.php?post_type=product', esc_html__( 'PXL Global Add-ons', 'pxl-product-addons' ), esc_html__( 'PXL Global Add-ons', 'pxl-product-addons' ), 'manage_woocommerce', 'pxl_global_addons', array( $this, 'global_addons_admin' ) );
+	}
+
+	public function tab() {
+		?><li class="addons_tab product_addons"><a href="#product_addons_data"><span><?php esc_html_e( 'Lafka Add-ons', 'lafka-plugin' ); ?></span></a></li><?php
 	}
 
 	public function global_addons_admin() {
@@ -231,11 +235,9 @@ class PXL_Product_Addon_Admin {
 	public function process_meta_box( $post_id ) {
 		// Save addons as serialised array.
 		$product_addons                = $this->get_posted_product_addons();
-		$product_addons_exclude_global = isset( $_POST['_product_addons_exclude_global'] ) ? 1 : 0;
 
 		$product = wc_get_product( $post_id );
 		$product->update_meta_data( '_product_addons', $product_addons );
-		$product->update_meta_data( '_product_addons_exclude_global', $product_addons_exclude_global );
 		$product->save();
 	}
 
