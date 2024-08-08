@@ -24,7 +24,7 @@ class PXL_Product_Addon_Admin {
 	}
 
 	public function tab() {
-		?><li class="addons_tab product_addons"><a href="#product_addons_data"><span><?php esc_html_e( 'Lafka Add-ons', 'lafka-plugin' ); ?></span></a></li><?php
+		?><li class="addons_tab product_addons"><a href="#product_addons_data"><span><?php esc_html_e( 'PXL Add-ons', 'lafka-plugin' ); ?></span></a></li><?php
 	}
 
 	public function panel() {
@@ -168,8 +168,6 @@ class PXL_Product_Addon_Admin {
 			$addon_description  = $_POST['product_addon_description'];
 			$addon_type         = $_POST['product_addon_type'];
 			$addon_position     = $_POST['product_addon_position'];
-			$addon_variations     = isset($_POST['product_addon_variations']) ? $_POST['product_addon_variations'] : 0;
-			$addon_variation_attribute = isset($_POST['product_addon_variation_attribute']) ? $_POST['product_addon_variation_attribute'] : array();
 			$addon_required     = isset( $_POST['product_addon_required'] ) ? $_POST['product_addon_required'] : array();
 
 			$addon_option_label = $_POST['product_addon_option_label'];
@@ -229,7 +227,6 @@ class PXL_Product_Addon_Admin {
 				$data['description'] = wp_kses_post( stripslashes( $addon_description[ $i ] ) );
 				$data['type']        = sanitize_text_field( stripslashes( $addon_type[ $i ] ) );
 				$data['position']    = absint( $addon_position[ $i ] );
-				$data['variations'] = isset( $addon_variations[ $i ] ) ? 1 : 0;
 				$data['attribute'] = absint( empty( $addon_variation_attribute[ $i ] ) ? 0 : $addon_variation_attribute[ $i ] );
 				$data['options']     = $addon_options;
 				$data['required']    = isset( $addon_required[ $i ] ) ? 1 : 0;
@@ -263,18 +260,5 @@ class PXL_Product_Addon_Admin {
 		);
 
 		return apply_filters( 'Pxl_Product_Addons_new_addon_option', $new_addon_option );
-	}
-
-	public static function lafka_get_addons_variations_attribute_values( $taxonomy ) {
-		$to_return = array();
-
-		if ( taxonomy_exists( $taxonomy ) ) {
-			$terms = get_terms( $taxonomy, 'hide_empty=0' );
-			foreach ( $terms as $term ) {
-				$to_return[$taxonomy][ $term->slug ] = htmlspecialchars( $term->name );
-			}
-		}
-
-		return $to_return;
 	}
 }

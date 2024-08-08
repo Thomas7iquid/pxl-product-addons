@@ -147,7 +147,6 @@ $empty_name_message = esc_html__( 'All addon fields require a name.', 'lafka-plu
 				$addon['description']   = '';
 				$addon['required']      = '';
 				$addon['type']          = 'checkbox';
-				$addon['variations']    = '';
 				$addon['options']       = array(
 					PXL_Product_Addon_Admin::get_new_addon_option()
 				);
