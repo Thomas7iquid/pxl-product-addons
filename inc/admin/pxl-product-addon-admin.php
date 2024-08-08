@@ -36,7 +36,7 @@ class PXL_Product_Addon_Admin {
 		$exclude_global = $product->get_meta( '_product_addons_exclude_global' );
 		$attribute_taxonomies = wc_get_attribute_taxonomies();
 
-		include( dirname( __FILE__ ) . '/views/html-addon-panel.php' );
+		include( dirname( __FILE__ ) . '/views/addon-panel-html.php' );
 	}
 
 	public function global_addons_admin() {
