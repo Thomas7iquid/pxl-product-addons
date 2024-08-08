@@ -10,7 +10,7 @@ class PXL_Product_Addon_Admin {
 		add_action( 'admin_menu', array( $this, 'admin_menu' ), 9 );
 		//add_filter( 'woocommerce_screen_ids', array( $this, 'add_screen_id' ) );
 		add_action( 'woocommerce_product_write_panel_tabs', array( $this, 'tab' ) );
-		//add_action( 'woocommerce_product_data_panels', array( $this, 'panel' ) );
+		add_action( 'woocommerce_product_data_panels', array( $this, 'panel' ) );
 		//add_action( 'woocommerce_process_product_meta', array( $this, 'process_meta_box' ), 1 );
 	}
 
@@ -25,6 +25,18 @@ class PXL_Product_Addon_Admin {
 
 	public function tab() {
 		?><li class="addons_tab product_addons"><a href="#product_addons_data"><span><?php esc_html_e( 'Lafka Add-ons', 'lafka-plugin' ); ?></span></a></li><?php
+	}
+
+	public function panel() {
+		global $post;
+
+		$product        = wc_get_product( $post );
+		$exists         = (bool) $product->get_id();
+		$product_addons = array_filter( (array) $product->get_meta( '_product_addons' ) );
+		$exclude_global = $product->get_meta( '_product_addons_exclude_global' );
+		$attribute_taxonomies = wc_get_attribute_taxonomies();
+
+		include( dirname( __FILE__ ) . '/views/html-addon-panel.php' );
 	}
 
 	public function global_addons_admin() {
